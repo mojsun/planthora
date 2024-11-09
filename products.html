@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <script src="js/script.js" defer></script>
+    <title>Plantora website</title>
+  </head>
+  <body class="dark:bg-darkBlue dark:text-white font-opensans">
+    <!-- Header -->
+    <header class="container mx-auto mt-10 px-6 text-center h-40 md:h-20">
+      <!-- Dynamic Logo -->
+      <!-- <div
+        class="bg-logo-light-mode dark:bg-logo-dark-mode bg-no-repeat h-20 w-48 mx-auto md:mx-0 md:absolute top-10 left-10"
+      >
+        <a href="index.html"></a>
+      </div> -->
+      <a
+        href="/index.html"
+        class="text-black dark:text-white h-20 w-48 mx-auto md:mx-0 md:absolute top-11 left-10 text-3xl font-bold"
+      >
+        Planthora
+      </a>
+      <!-- Menu -->
+      <div
+        class="flex items-center justify-center space-x-4 md:space-x-10 md:absolute top-12 right-10"
+      >
+        <a href="index.html" class="hover:text-greenOne">Home</a>
+        <a href="products.html" class="hover:text-greenOne">Products</a>
+        <a href="feature.html" class="hover:text-greenOne">Feature</a>
+
+        <!-- Dark/Light Mode Button -->
+        <button
+          id="theme-toggle"
+          class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2"
+        >
+          <!-- Dark SVG Icon -->
+          <svg
+            id="theme-toggle-dark-icon"
+            class="w-5 h-5 hidden"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+          </svg>
+          <!-- Light SVG Icon -->
+          <svg
+            id="theme-toggle-light-icon"
+            class="w-5 h-5 hidden"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <!-- Feature Section -->
+    <section id="feature">
+      <!-- Feature Container -->
+      <div
+        class="relative container flex flex-col max-w-6xl mx-auto my-32 px-6 text-gray-900 md:flex-row md:px-0"
+      >
+        <!-- Image -->
+        <img src="images/productHeader.jpg" alt="" />
+
+        <!-- Text Container -->
+        <div
+          class="top-48 pr-0 bg-white md:absolute md:right-0 md:py-20 md:pl-20"
+        >
+          <h2
+            class="max-w-lg mt-10 mb-6 font-sans text-4xl text-center text-gray-900 uppercase md:text-5xl md:mt-0 md:text-left"
+          >
+            Bring Nature to Your Doorstep
+          </h2>
+
+          <p class="max-w-md text-center md:text-left">
+            Our company is dedicated to bringing the beauty and benefits of
+            plants into your life, whether you shop with us in person or through
+            our convenient online platform. We offer a carefully curated
+            selection of healthy, vibrant plants, each chosen to enhance your
+            space and well-being. Our team of plant experts is here to guide
+            you, from choosing the right plant to providing tips for
+            long-lasting care.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Creations Section -->
+    <section id="creations">
+      <!-- Creations Container -->
+      <div class="container max-w-6xl mx-auto my-32 px-6 text-gray-900 md:px-0">
+        <!-- Creations Header -->
+        <div class="flex justify-center mb-20 md:justify-between">
+          <h2
+            class="text-4xl text-center uppercase md:text-left md:text-5xl hover:text-white font-bold text-black dark:text-white"
+          >
+            Our Products
+          </h2>
+
+          <button class="hidden btn md:block">See All</button>
+        </div>
+
+        <!-- Items Container -->
+        <div
+          class="flex flex-col justify-between w-full space-y-6 text-2xl text-black uppercase md:flex-row md:space-y-0 md:space-x-8"
+        >
+          <!-- Item 1 -->
+          <div class="group relative overflow-hidden md:w-1/4">
+            <!-- Desktop Image -->
+            <img
+              src="images/desktop/plant1.jpg"
+              alt=""
+              class="hidden w-full duration-200 md:block group-hover:scale-110"
+            />
+            <!-- Mobile Image -->
+            <img
+              src="images/mobile/plant11.jpg"
+              alt=""
+              class="w-full md:hidden"
+            />
+          </div>
+
+          <!-- Item 2 -->
+          <div class="group relative overflow-hidden md:w-1/4">
+            <!-- Desktop Image -->
+            <img
+              src="images/desktop/plant2.jpg"
+              alt=""
+              class="hidden w-full duration-200 md:block group-hover:scale-110"
+            />
+            <!-- Mobile Image -->
+            <img
+              src="images/mobile/plant22.jpg"
+              alt=""
+              class="w-full md:hidden"
+            />
+          </div>
+
+          <!-- Item 3 -->
+          <div class="group relative overflow-hidden md:w-1/4">
+            <!-- Desktop Image -->
+            <img
+              src="images/desktop/plant3.jpg"
+              alt=""
+              class="hidden w-full duration-200 md:block group-hover:scale-110"
+            />
+            <!-- Mobile Image -->
+            <img
+              src="images/mobile/plant33.jpg"
+              alt=""
+              class="w-full md:hidden"
+            />
+          </div>
+
+          <!-- Item 4 -->
+          <div class="group relative overflow-hidden md:w-1/4">
+            <!-- Desktop Image -->
+            <img
+              src="images/desktop/plant4.jpg"
+              alt=""
+              class="hidden w-full duration-200 md:block group-hover:scale-110"
+            />
+            <!-- Mobile Image -->
+            <img
+              src="images/mobile/plant44.jpg"
+              alt=""
+              class="w-full md:hidden"
+            />
+          </div>
+        </div>
+
+        <!-- Item Container 2 -->
+        <div
+          class="flex flex-col justify-between w-full space-y-6 text-2xl text-black uppercase md:flex-row md:space-y-0 md:space-x-8 mt-10"
+        >
+          <!-- Item 1 -->
+          <div class="group relative overflow-hidden md:w-1/4">
+            <!-- Desktop Image -->
+            <img
+              src="images/desktop/plant5.jpg"
+              alt=""
+              class="hidden w-full duration-200 md:block group-hover:scale-110"
+            />
+            <!-- Mobile Image -->
+            <img
+              src="images/mobile/plant55.jpg"
+              alt=""
+              class="w-full md:hidden"
+            />
+          </div>
+
+          <!-- Item 2 -->
+          <div class="group relative overflow-hidden md:w-1/4">
+            <!-- Desktop Image -->
+            <img
+              src="images/desktop/plant6.jpg"
+              alt=""
+              class="hidden w-full duration-200 md:block group-hover:scale-110"
+            />
+            <!-- Mobile Image -->
+            <img
+              src="images/mobile/plant99.jpg"
+              alt=""
+              class="w-full md:hidden"
+            />
+          </div>
+
+          <!-- Item 3 -->
+          <div class="group relative overflow-hidden md:w-1/4">
+            <!-- Desktop Image -->
+            <img
+              src="images/desktop/plant7.jpg"
+              alt=""
+              class="hidden w-full duration-200 md:block group-hover:scale-110"
+            />
+            <!-- Mobile Image -->
+            <img
+              src="images/mobile/plant77.jpg"
+              alt=""
+              class="w-full md:hidden"
+            />
+          </div>
+
+          <!-- Item 4 -->
+          <div class="group relative overflow-hidden md:w-1/4">
+            <!-- Desktop Image -->
+            <img
+              src="images/desktop/plant8.jpg"
+              alt=""
+              class="hidden w-full duration-200 md:block group-hover:scale-110"
+            />
+            <!-- Mobile Image -->
+            <img
+              src="images/mobile/plant88.jpg"
+              alt=""
+              class="w-full md:hidden"
+            />
+          </div>
+        </div>
+        <!-- Bottom Button Container -->
+        <div class="flex justify-center mt-10 md:hidden">
+          <button
+            class="px-10 py-2 my-0 font-bold tracking-widest uppercase border-2 border-black font-alata hover:bg-black hover:text-white w-full md:hidden"
+          >
+            See All
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-darkBlue2 text-white">
+      <div class="container mx-auto pt-12 px-5 pb-10">
+        <!-- Flex Container For All Items -->
+        <div
+          class="flex flex-col items-center justify-between space-y-24 text-center md:flex-row md:space-y-0 md:text-left"
+        >
+          <!-- Email & Phone -->
+          <div class="mt-10 space-y-6">
+            <div
+              class="flex flex-col items-center md:items-start space-y-3 md:-mt-10"
+            >
+              <div class="w-6">
+                <img src="images/icon-phone.svg" alt="" class="scale-10" />
+              </div>
+              <div>+1-647-897-4341</div>
+            </div>
+            <div class="flex flex-col items-center md:items-start space-y-3">
+              <div class="w-6">
+                <img src="images/icon-email.svg" alt="" class="scale-10" />
+              </div>
+              <div>xyz@planthora.com</div>
+            </div>
+          </div>
+
+          <!-- Menus -->
+          <div
+            class="flex flex-col items-center space-y-10 text-xl md:text-base md:space-x-20 md:space-y-0 md:flex-row"
+          >
+            <div class="flex flex-col space-y-3">
+              <a href="/index.html">Home</a>
+              <a href="/products.html">Products</a>
+              <a href="/feature.html">Feature</a>
+            </div>
+            <div class="flex flex-col space-y-3">
+              <a href="#">Contact Us</a>
+              <a href="#">Terms</a>
+              <a href="#">Privacy</a>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="flex justify-center pb-10 space-x-3">
+            <div>
+              <a href="#">
+                <img
+                  src="images/facebook.svg"
+                  alt=""
+                  class="p-2 bg-darkBlue rounded-full ficon"
+                />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img
+                  src="images/twitter.svg"
+                  alt=""
+                  class="p-2 bg-darkBlue rounded-full ficon"
+                />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img
+                  src="images/instagram.svg"
+                  alt=""
+                  class="p-2 bg-darkBlue rounded-full ficon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

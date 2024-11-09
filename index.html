@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // https://www.freecodecamp.org/news/how-to-build-a-dark-mode-switcher-with-tailwind-css-and-flowbite
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <script src="js/script.js" defer></script>
+    <title>Plantora website</title>
+  </head>
+  <body class="dark:bg-darkBlue dark:text-white font-opensans">
+    <!-- Header -->
+    <header class="container mx-auto mt-10 px-6 text-center h-40 md:h-20">
+      <!-- Dynamic Logo -->
+      <!-- <div
+        class="bg-logo-light-mode dark:bg-logo-dark-mode bg-no-repeat h-20 w-48 mx-auto md:mx-0 md:absolute top-10 left-10"
+      ></div> -->
+      <a
+        href="/index.html"
+        class="text-black dark:text-white h-20 w-48 mx-auto md:mx-0 md:absolute top-11 left-10 text-3xl font-bold"
+      >
+        Planthora
+      </a>
+      <!-- Menu -->
+      <div
+        class="flex items-center justify-center space-x-4 md:space-x-10 md:absolute top-12 right-10"
+      >
+        <a href="index.html" class="hover:text-greenTwo">Home</a>
+        <a href="products.html" class="hover:text-greenTwo">Products</a>
+        <a href="feature.html" class="hover:text-greenTwo">Feature</a>
+
+        <!-- Dark/Light Mode Button -->
+        <button
+          id="theme-toggle"
+          class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 5"
+        >
+          <!-- Dark SVG Icon -->
+          <svg
+            id="theme-toggle-dark-icon"
+            class="w-5 h-5 hidden"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+          </svg>
+          <!-- Light SVG Icon -->
+          <svg
+            id="theme-toggle-light-icon"
+            class="w-5 h-5 hidden"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="container max-w-6xl mx-auto px-6 py-12">
+        <div
+          class="max-w-lg mt-32 mb-32 p-4 font-sans text-4xl text-black uppercase md:p-10 md:m-32 md:mx-0 md:text-6xl"
+        >
+          Make Your Home
+          <span class="text-greenOne text-7xl font-bold">Green</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productive Section1 -->
+    <section id="productive" class="bg-gray-50 dark:bg-darkBlue">
+      <!-- Productive Container -->
+      <div
+        class="container flex flex-col items-center mx-auto px-6 pt-24 pb-32 md:flex-row md:space-x-16"
+      >
+        <!-- Image -->
+        <div class="md:w-1/2">
+          <img src="images/svg1.svg" alt="" class="mb-10" />
+        </div>
+        <!-- Content -->
+        <div class="flex flex-col items-start md:w-1/2">
+          <div class="flex flex-col space-y-5">
+            <h4 class="max-w-md text-xl font-bold md:text-4xl">
+              Bring Nature Into Your Home, Effortlessly
+            </h4>
+            <p class="text-md md:text-lg">
+              Our plants are carefully selected to thrive in a variety of home
+              and office environments, making it easy for you to bring a touch
+              of nature indoors. We prioritize quality, ensuring that each plant
+              arrives healthy and ready to flourish in your care. With our wide
+              range of plant varieties, from air-purifying houseplants to
+              low-maintenance succulents, theres something for every plant
+              lover.
+            </p>
+
+            <p class="text-md md:text-lg">
+              Let us help you create a green sanctuary that improves air quality
+              and boosts your mood, no matter where you are.
+            </p>
+          </div>
+
+          <!-- Link -->
+          <div class="block mt-4">
+            <a href="#" class="border-b border-greenOne text-greenOne">
+              See how Flyo works
+              <img src="images/icon-arrow.svg" alt="" class="inline pb-2" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productive Section2 -->
+    <section id="productive" class="bg-gray-50 dark:bg-darkBlue">
+      <!-- Productive Container -->
+      <div
+        class="container flex flex-col items-center mx-auto px-6 pt-24 pb-32 md:flex-row md:space-x-16"
+      >
+        <!-- Content -->
+        <div class="flex flex-col items-start md:w-1/2">
+          <div class="flex flex-col space-y-5">
+            <h4 class="max-w-md text-xl font-bold md:text-4xl">
+              Sustainable, Quality-Driven, and Expertly Grown
+            </h4>
+            <p class="text-md md:text-lg">
+              Our commitment to sustainability and quality is at the heart of
+              what we do. Each plant is grown with care and dedication,
+              following eco-friendly practices to reduce our carbon footprint
+              and support environmental well-being. We partner with local
+              nurseries and seasoned growers to ensure that you receive plants
+              that are as resilient as they are beautiful.
+            </p>
+
+            <p class="text-md md:text-lg">
+              With tips and guidance for every plant we offer, we empower you to
+              nurture a thriving green space in your home, without the
+              guesswork.
+            </p>
+          </div>
+
+          <!-- Link -->
+          <div class="block mt-4">
+            <a href="#" class="border-b border-greenOne text-greenOne">
+              See how Flyo works
+              <img src="images/icon-arrow.svg" alt="" class="inline pb-2" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="md:w-1/2">
+          <img src="images/svg2.svg" alt="" class="mb-10" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="pt-12 bg-white dark:bg-darkBlue1">
+      <!-- Features Container -->
+      <div class="container mx-auto px-6 pb-32">
+        <!-- First Row -->
+        <div
+          class="flex flex-col space-y-24 text-center md:flex-row md:space-y-0"
+        >
+          <!-- Item 1 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="flex items-center justify-center h-24 mb-6">
+              <img src="images/icon-access-anywhere.svg" alt="" />
+            </div>
+            <h3 class="text-xl font-bold">Shop Plants Anywhere</h3>
+            <p class="max-w-md">
+              With our easy-to-use website and app, you can browse and buy your
+              favorite plants from your phone, tablet, or computer—anytime,
+              anywhere. Whether youre on the go or at home, your plant shopping
+              experience is always within reach.
+            </p>
+          </div>
+          <!-- Item 2 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="flex items-center justify-center h-24 mb-6">
+              <img src="images/icon-security.svg" alt="" class="icon-color" />
+            </div>
+            <h3 class="text-xl font-bold">Secure Shopping</h3>
+            <p class="max-w-md">
+              We prioritize your security and privacy. Our platform uses
+              industry-standard encryption and offers secure payment options, so
+              you can shop with confidence. Plus, our customer support is always
+              here to assist you with any questions about your orders.
+            </p>
+          </div>
+        </div>
+
+        <!-- Second Row -->
+        <div
+          class="flex flex-col space-y-24 mt-28 text-center md:flex-row md:space-y-0"
+        >
+          <!-- Item 3 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="flex items-center justify-center h-24 mb-6">
+              <img src="images/icon-collaboration.svg" alt="" />
+            </div>
+            <h3 class="text-xl font-bold">Shop Plants Anytime</h3>
+            <p class="max-w-md">
+              With our easy-to-use website and app, you can browse and buy your
+              favorite plants from your phone, tablet, or computer—anytime,
+              anywhere. Whether you’re on the go or at home, your plant shopping
+              experience is always within reach.
+            </p>
+          </div>
+          <!-- Item 4 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="flex items-center justify-center h-24 mb-6">
+              <img src="images/icon-any-file.svg" alt="" />
+            </div>
+            <h3 class="text-xl font-bold">Trustworthy Shopping</h3>
+            <p class="max-w-md">
+              We prioritize your security and privacy. Our platform uses
+              industry-standard encryption and offers secure payment options, so
+              you can shop with confidence. Plus, our customer support is always
+              here to assist you with any questions about your orders.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-gray-50 dark:bg-darkBlue">
+      <!-- Testimonials Container -->
+      <div class="container mx-auto px-6 pt-12 pb-80 md:pb-96">
+        <!-- Boxes Container -->
+        <div
+          class="relative flex flex-col w-full space-y-6 md:flex-row md:space-y-0 md:space-x-12"
+        >
+          <!-- Quotes Image -->
+          <!-- <img
+            src="images/bg-quotes.png"
+            alt=""
+            class="absolute left-1 -top-2 w-10 md:-top-16 md:w-20"
+          /> -->
+
+          <!-- Box 1 -->
+          <div
+            class="flex flex-col p-10 space-y-6 rounded-lg bg-gray-100 dark:bg-darkBlue3 md:w-1/3"
+          >
+            <p class="text-sm leading-5 md:text-lg">
+              As a customer, I couldn't be happier with the quality and vitality
+              of the plants from this website. Each plant I've received has been
+              lush, healthy, and ready to thrive in its new home.
+            </p>
+            <!-- Customer Info -->
+            <div class="flex space-x-4">
+              <img
+                src="images/firstPerson.png"
+                alt=""
+                class="w-10 h-10 rounded-full"
+              />
+              <div>
+                <h5 class="text-sm font-semibold">Jane Enstien</h5>
+                <p class="text-xs font-extralight">Founder & CEO. madMax</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div
+            class="flex flex-col p-10 space-y-6 rounded-lg bg-gray-100 dark:bg-darkBlue3 md:w-1/3"
+          >
+            <p class="text-sm leading-5 md:text-lg">
+              As a customer, I couldn't be happier with the quality and vitality
+              of the plants from this website. Each plant I've received has been
+              lush, healthy, and ready to thrive in its new home.
+            </p>
+            <!-- Customer Info -->
+            <div class="flex space-x-4">
+              <img
+                src="images/secondPerson.png"
+                alt=""
+                class="w-10 h-10 rounded-full"
+              />
+              <div>
+                <h5 class="text-sm font-semibold">Jack Watson</h5>
+                <p class="text-xs font-extralight">Founder & CEO. madMax</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 3 -->
+          <div
+            class="flex flex-col p-10 space-y-6 rounded-lg bg-gray-100 dark:bg-darkBlue3 md:w-1/3"
+          >
+            <p class="text-sm leading-5 md:text-lg">
+              As a customer, I couldn't be happier with the quality and vitality
+              of the plants from this website. Each plant I've received has been
+              lush, healthy, and ready to thrive in its new home.
+            </p>
+            <!-- Customer Info -->
+            <div class="flex space-x-4">
+              <img
+                src="images/thirdPerson.png"
+                alt=""
+                class="w-10 h-10 rounded-full"
+              />
+              <div>
+                <h5 class="text-sm font-semibold">Ema Smith</h5>
+                <p class="text-xs font-extralight">Founder & CEO. madMax</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Early Access Section -->
+    <section id="early-access" class="relative px-6 dark:bg-darkBlue2 md:px-0">
+      <div
+        class="relative -top-40 max-w-4xl mx-auto p-10 px-6 space-y-6 text-center rounded-lg bg-gray-200 dark:bg-darkBlue1 md:px-16"
+      >
+        <h5 class="text-2xl font-bold">Sign up now for early access!</h5>
+        <p class="text-sm">
+          Joining takes just a minute, and our free starter plan offers
+          incredible value. If you need any assistance, our support team is
+          always here to help.
+        </p>
+        <!-- Input & Button Container -->
+        <div
+          class="flex flex-col items-start space-y-6 md:flex-row md:space-y-0 md:space-x-6"
+        >
+          <div class="w-full md:flex-1">
+            <input
+              type="text"
+              class="w-full px-10 py-3 rounded-full focus:outline-none"
+              placeholder="email@example.com"
+            />
+          </div>
+
+          <button
+            class="w-full p-3 px-6 rounded-full bg-greenOne md:w-56 hover:scale-95"
+          >
+            Get Started Right Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkBlue2 text-white">
+      <div class="container mx-auto pt-12 px-5 pb-10">
+        <!-- Flex Container For All Items -->
+        <div
+          class="flex flex-col items-center justify-between space-y-24 text-center md:flex-row md:space-y-0 md:text-left"
+        >
+          <!-- Email & Phone -->
+          <div class="mt-10 space-y-6">
+            <div
+              class="flex flex-col items-center md:items-start space-y-3 md:-mt-10"
+            >
+              <div class="w-6">
+                <img src="images/icon-phone.svg" alt="" class="scale-10" />
+              </div>
+              <div>+1-647-897-4341</div>
+            </div>
+            <div class="flex flex-col items-center md:items-start space-y-3">
+              <div class="w-6">
+                <img src="images/icon-email.svg" alt="" class="scale-10" />
+              </div>
+              <div>xyz@planthora.com</div>
+            </div>
+          </div>
+
+          <!-- Menus -->
+          <div
+            class="flex flex-col items-center space-y-10 text-xl md:text-base md:space-x-20 md:space-y-0 md:flex-row"
+          >
+            <div class="flex flex-col space-y-3">
+              <a href="/index.html">Home</a>
+              <a href="/products.html">Products</a>
+              <a href="/feature.html">Feature</a>
+            </div>
+            <div class="flex flex-col space-y-3">
+              <a href="#">Contact Us</a>
+              <a href="#">Terms</a>
+              <a href="#">Privacy</a>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="flex justify-center pb-10 space-x-3">
+            <div>
+              <a href="#">
+                <img
+                  src="images/facebook.svg"
+                  alt=""
+                  class="p-2 bg-darkBlue rounded-full ficon"
+                />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img
+                  src="images/twitter.svg"
+                  alt=""
+                  class="p-2 bg-darkBlue rounded-full ficon"
+                />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img
+                  src="images/instagram.svg"
+                  alt=""
+                  class="p-2 bg-darkBlue rounded-full ficon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

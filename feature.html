@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // https://www.freecodecamp.org/news/how-to-build-a-dark-mode-switcher-with-tailwind-css-and-flowbite
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <script src="js/script.js" defer></script>
+    <title>Plantora website</title>
+  </head>
+  <body class="dark:bg-darkBlue dark:text-white font-opensans">
+    <!-- Header -->
+    <header class="container mx-auto mt-10 px-6 text-center h-40 md:h-20">
+      <!-- Dynamic Logo -->
+      <!-- <div
+        class="bg-logo-light-mode dark:bg-logo-dark-mode bg-no-repeat h-20 w-48 mx-auto md:mx-0 md:absolute top-10 left-10"
+      >
+        <a href="index.html"></a>
+      </div> -->
+      <a
+        href="/index.html"
+        class="text-black dark:text-white h-20 w-48 mx-auto md:mx-0 md:absolute top-11 left-10 text-3xl font-bold"
+      >
+        Planthora
+      </a>
+      <!-- Menu -->
+      <div
+        class="flex items-center justify-center space-x-4 md:space-x-10 md:absolute top-12 right-10"
+      >
+        <a href="index.html" class="hover:text-greenOne">Home</a>
+        <a href="products.html" class="hover:text-greenOne">Products</a>
+        <a href="#testimonials" class="hover:text-greenOne">Feature</a>
+
+        <!-- Dark/Light Mode Button -->
+        <button
+          id="theme-toggle"
+          class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 5"
+        >
+          <!-- Dark SVG Icon -->
+          <svg
+            id="theme-toggle-dark-icon"
+            class="w-5 h-5 hidden"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+          </svg>
+          <!-- Light SVG Icon -->
+          <svg
+            id="theme-toggle-light-icon"
+            class="w-5 h-5 hidden"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Features Heading -->
+    <section id="features">
+      <div class="container mx-auto mt-16 px-6">
+        <h2 class="mb-6 text-4xl font-semibold text-center">Use Our App</h2>
+        <p class="max-w-md mx-auto text-center text-grayishBlue">
+          Our app makes buying and selling plants easier than ever. With a
+          simple and intuitive interface, you can explore a wide variety of
+          plants, from vibrant indoor greens to garden essentials, right from
+          your phone.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Tabs -->
+    <section id="tabs">
+      <!-- Tabs/Panels Container -->
+      <div class="container relative mx-auto my-6 mb-32 mt-12 px-6">
+        <div class="bg-tabs"></div>
+        <!-- Tabs Flex Container -->
+        <div
+          class="flex flex-col justify-center max-w-xl mx-auto mb-6 border-b md:space-x-10 md:flex-row"
+        >
+          <!-- Tab 1 -->
+          <div
+            class="flex justify-center text-center cursor-pointer text-gray-600 border-b md:border-b-0 hover:text-greenOne md:w-1/3 tab"
+            data-target="panel-1"
+          >
+            <div class="py-5 border-b-4 border-greenOne" data-target="panel-1">
+              Greenery On Demand
+            </div>
+          </div>
+
+          <!-- Tab 2 -->
+          <div
+            class="flex justify-center text-center cursor-pointer text-gray-600 border-b md:border-b-0 hover:text-greenOne md:w-1/3 tab"
+            data-target="panel-2"
+          >
+            <div class="py-5 border-greenOne" data-target="panel-2">
+              Order in Anywhere
+            </div>
+          </div>
+
+          <!-- Tab 3 -->
+          <div
+            class="flex justify-center text-center cursor-pointer text-gray-600 border-b md:border-b-0 hover:text-greenOne md:w-1/3 tab"
+            data-target="panel-3"
+          >
+            <div class="py-5 border-greenOne" data-target="panel-3">
+              Plant Lover’s App
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panels -->
+        <div id="panels" class="container mx-auto">
+          <!-- Panel 1 -->
+          <div
+            class="flex flex-col py-5 md:flex-row md:space-x-7 panel panel-1"
+          >
+            <!-- Panel Image -->
+            <div class="flex justify-center md:w-1/2">
+              <img src="images/svg3.svg" alt="" class="relative z-10" />
+            </div>
+            <!-- Panel Content -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+              <h3
+                class="mt-32 text-3xl font-semibold text-center md:mt-0 md:text-left"
+              >
+                Greenery at Your Fingertips
+              </h3>
+              <p class="max-w-md text-center text-grayishBlue md:text-left">
+                Our app brings a world of plants to your doorstep, offering a
+                wide selection of unique and popular plants for every space.
+                With easy navigation and personalized recommendations, you can
+                find the perfect plants to brighten your home, office, or
+                garden.
+              </p>
+              <div class="mx-auto md:mx-0">
+                <a
+                  href="#"
+                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-greenOne hover:bg-white hover:text-greenOne hover:border-greenOne hover:border-2"
+                  >More Info</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2 -->
+          <div
+            class="flex flex-col hidden py-5 md:flex-row md:space-x-7 panel panel-2"
+          >
+            <!-- Panel Image -->
+            <div class="flex justify-center md:w-1/2">
+              <img src="images/svg4.svg" alt="" class="relative z-10" />
+            </div>
+            <!-- Panel Content -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+              <h3
+                class="mt-14 text-3xl font-semibold text-center md:mt-0 md:text-left"
+              >
+                Order Plants with Ease, Anytime, Anywhere
+              </h3>
+              <p class="max-w-md text-center text-grayishBlue md:text-left">
+                Designed with simplicity and convenience in mind, our app lets
+                you browse, purchase, and schedule plant deliveries on the go.
+                Whether you're at home or on the move, adding greenery to your
+                life has never been this effortless.
+              </p>
+              <div class="mx-auto md:mx-0">
+                <a
+                  href="#"
+                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-greenOne hover:bg-white hover:text-greenOne hover:border-greenOne hover:border-2"
+                  >More Info</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3 -->
+          <div
+            class="flex flex-col hidden py-5 md:flex-row md:space-x-7 panel panel-3"
+          >
+            <!-- Panel Image -->
+            <div class="flex justify-center md:w-1/2">
+              <img src="images/svg5.svg" alt="" class="relative z-10" />
+            </div>
+            <!-- Panel Content -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+              <h3
+                class="mt-14 text-3xl font-semibold text-center md:mt-0 md:text-left"
+              >
+                Your Go-To App for Plant Lovers
+              </h3>
+              <p class="max-w-md text-center text-grayishBlue md:text-left">
+                Discover, learn, and shop plants like never before! Our app
+                provides expert care tips, detailed plant profiles, and easy
+                ordering options so you can grow your plant collection with
+                confidence. Join our community of plant lovers and enjoy
+                exclusive offers and updates right from your phone.
+              </p>
+              <div class="mx-auto md:mx-0">
+                <a
+                  href="#"
+                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-greenOne hover:bg-white hover:text-greenOne hover:border-greenOne hover:border-2"
+                  >More Info</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Heading -->
+    <section id="download">
+      <div class="container mx-auto px-6">
+        <h2 class="mb-6 text-3xl font-semibold text-center md:text-4xl">
+          Explore Our Unique Offerings
+        </h2>
+        <p class="max-w-lg mx-auto text-center text-grayishBlue">
+          Discover our most popular plants, essential care tips, and unique
+          features to make plant care easy.
+        </p>
+      </div>
+    </section>
+
+    <!--Explore Boxes -->
+    <section id="download-boxes" class="py-32">
+      <!-- Boxes Container -->
+      <div
+        class="relative flex flex-col items-stretch max-w-5xl mx-auto space-y-10 px-10 md:px-6 md:space-y-0 md:space-x-7 md:flex-row"
+      >
+        <!-- Box 1 -->
+        <div
+          class="flex flex-col w-full py-6 space-y-4 text-center rounded-lg shadow-lg md:w-1/3 min-h-[350px]"
+        >
+          <div class="flex justify-center">
+            <img src="images/svg6.svg" alt="" />
+          </div>
+          <h5 class="pt-6 text-xl font-bold">Popular Plant</h5>
+          <p class="text-gray-400">The Swiss Cheese Plant</p>
+          <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
+            <a
+              href="#"
+              class="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-greenOne hover:text-greenOne hover:bg-white border-greenOne"
+              >Learn Care Tips</a
+            >
+          </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="w-full md:w-1/3 min-h-[350px]">
+          <div
+            class="flex flex-col w-full py-6 space-y-4 text-center rounded-lg shadow-lg"
+          >
+            <div class="flex justify-center">
+              <img src="images/svg5.svg" alt="" />
+            </div>
+            <h5 class="pt-6 text-xl font-bold">Easy Plant Delivery</h5>
+            <p class="text-gray-400">Fast & Safe Delivery</p>
+            <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
+              <a
+                href="#"
+                class="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-greenOne hover:text-greenOne hover:bg-white border-greenOne"
+                >See Delivery Options</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="w-full md:w-1/3 min-h-[350px]">
+          <div
+            class="flex flex-col w-full py-6 space-y-4 text-center rounded-lg shadow-lg"
+          >
+            <div class="flex justify-center">
+              <img src="images/svg7.svg" alt="" />
+            </div>
+            <h5 class="pt-6 text-xl font-bold">Plant Care Guides</h5>
+            <p class="text-gray-400">Your Green Companion</p>
+            <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
+              <a
+                href="#"
+                class="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-greenOne hover:text-greenOne hover:bg-white border-greenOne"
+                >Explore Care Guides</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Heading -->
+    <section id="faq">
+      <div class="container mx-auto">
+        <h2 class="mb-6 text-3xl font-semibold text-center md:text-4xl">
+          Common Questions
+        </h2>
+        <p class="max-w-lg px-6 mx-auto text-center text-gray-500">
+          Below are some of our most frequently asked questions. If you have any
+          others, don’t hesitate to reach out to us by email.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq-accordion">
+      <!-- Main Container -->
+      <div class="container mx-auto px-6 mb-32">
+        <!-- Accordion Container -->
+        <div class="max-w-2xl m-8 mx-auto overflow-hidden">
+          <!-- Tab 1 -->
+          <div class="py-1 border-b outline-none group" tabindex="1">
+            <!-- Tab Flex Container -->
+            <div
+              class="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <!-- Tab Title -->
+              <div
+                class="transition duration-500 ease group-hover:text-greenOne"
+              >
+                What is Plantora?
+              </div>
+              <!-- Arrow -->
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-greenOne"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Tab Inner Content -->
+            <div
+              class="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                PlantSmart is your online platform for buying and selling a wide
+                variety of plants. We offer carefully curated options for every
+                plant enthusiast, from beginners to experienced gardeners, all
+                available with easy browsing and ordering.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tab 2 -->
+          <div class="py-1 border-b outline-none group" tabindex="2">
+            <!-- Tab Flex Container -->
+            <div
+              class="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <!-- Tab Title -->
+              <div
+                class="transition duration-500 ease group-hover:text-greenOne"
+              >
+                How can I request a specific plant?
+              </div>
+              <!-- Arrow -->
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-greenOne"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Tab Inner Content -->
+            <div
+              class="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                If there’s a particular plant you’re looking for that’s not
+                listed on our site, you can easily make a request through the
+                “Plant Wishlist” feature on our app or website. Our team will
+                notify you if it becomes available.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tab 3 -->
+          <div class="py-1 border-b outline-none group" tabindex="3">
+            <!-- Tab Flex Container -->
+            <div
+              class="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <!-- Tab Title -->
+              <div
+                class="transition duration-500 ease group-hover:text-greenOne"
+              >
+                Is there a mobile app?
+              </div>
+              <!-- Arrow -->
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-greenOne"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Tab Inner Content -->
+            <div
+              class="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Yes! You can download the PlantSmart app on iOS and Android. It
+                offers the same easy ordering experience as our website, along
+                with exclusive plant care tips and reminders for your purchased
+                plants.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tab 4 -->
+          <div class="py-1 border-b outline-none group" tabindex="4">
+            <!-- Tab Flex Container -->
+            <div
+              class="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <!-- Tab Title -->
+              <div
+                class="transition duration-500 ease group-hover:text-greenOne"
+              >
+                Can I use PlantSmart on other browsers?
+              </div>
+              <!-- Arrow -->
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-greenOne"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Tab Inner Content -->
+            <div
+              class="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Absolutely! Our site is fully compatible with popular browsers,
+                including Chrome, Safari, Edge, and Firefox, so you can browse
+                and buy from any device.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="bg-greenOne">
+      <!-- Main Container -->
+      <div class="max-w-lg mx-auto py-24">
+        <p
+          class="mb-6 text-lg tracking-widest text-center text-white uppercase"
+        >
+          48,000+ Members and Growing
+        </p>
+        <h2
+          class="px-3 mb-6 text-3xl font-semibold text-center text-white md:text-4xl"
+        >
+          Stay informed about our latest offerings
+        </h2>
+
+        <!-- Form -->
+        <form
+          class="flex flex-col items-start justify-center max-w-2xl mx-auto space-y-6 text-base px-6 md:flex-row md:space-y-0 md:space-x-4 md:px-0"
+        >
+          <!-- Input & Button Container -->
+          <div
+            class="flex flex-col justify-between items-center mx-auto md:flex-row md:mx-0"
+          >
+            <input
+              type="text"
+              class="flex-1 px-6 pt-3 pb-2 mb-4 rounded-lg border-1 border-white focus:outline-none md:mr-3 md:mb-0"
+              placeholder="Enter your email address"
+            />
+
+            <input
+              type="submit"
+              class="inline-flex px-6 py-3 font-semibold text-center text-white duration-200 transform rounded-lg cursor-pointer focus:outline-none bg-greenTwo hover:opacity-90"
+              value="Contact Us"
+            />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkBlue2 text-white">
+      <div class="container mx-auto pt-12 px-5 pb-10">
+        <!-- Flex Container For All Items -->
+        <div
+          class="flex flex-col items-center justify-between space-y-24 text-center md:flex-row md:space-y-0 md:text-left"
+        >
+          <!-- Email & Phone -->
+          <div class="mt-10 space-y-6">
+            <div
+              class="flex flex-col items-center md:items-start space-y-3 md:-mt-10"
+            >
+              <div class="w-6">
+                <img src="images/icon-phone.svg" alt="" class="scale-10" />
+              </div>
+              <div>+1-647-897-4341</div>
+            </div>
+            <div class="flex flex-col items-center md:items-start space-y-3">
+              <div class="w-6">
+                <img src="images/icon-email.svg" alt="" class="scale-10" />
+              </div>
+              <div>xyz@planthora.com</div>
+            </div>
+          </div>
+
+          <!-- Menus -->
+          <div
+            class="flex flex-col items-center space-y-10 text-xl md:text-base md:space-x-20 md:space-y-0 md:flex-row"
+          >
+            <div class="flex flex-col space-y-3">
+              <a href="/index.html">Home</a>
+              <a href="/products.html">Products</a>
+              <a href="/feature.html">Feature</a>
+            </div>
+            <div class="flex flex-col space-y-3">
+              <a href="#">Contact Us</a>
+              <a href="#">Terms</a>
+              <a href="#">Privacy</a>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="flex justify-center pb-10 space-x-3">
+            <div>
+              <a href="#">
+                <img
+                  src="images/facebook.svg"
+                  alt=""
+                  class="p-2 bg-darkBlue rounded-full ficon"
+                />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img
+                  src="images/twitter.svg"
+                  alt=""
+                  class="p-2 bg-darkBlue rounded-full ficon"
+                />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img
+                  src="images/instagram.svg"
+                  alt=""
+                  class="p-2 bg-darkBlue rounded-full ficon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
